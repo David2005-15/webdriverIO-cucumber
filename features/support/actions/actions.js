@@ -22,6 +22,10 @@ const Actions = () => {
 
         executeKeyboard: async (key)=> {
             await browser.keys(key)
+        },
+
+        waitUntilClickable: async (selector) => {
+            await $(selector).waitForClickable({timeout: 5000})
         }
     }
 }

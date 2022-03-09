@@ -30,6 +30,18 @@ class Selectors {
     fileUpload(){
         return `[type="file"]`
     }
+
+    textArea(){
+        return `#in-notes`
+    }
+
+    submit(){
+        return `#save-btn`
+    }
+
+    noteComplete(){
+        return `div > div.notifyjs-container > div > span`
+    }
 }
 
 module.exports = { Selectors }

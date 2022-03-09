@@ -20,6 +20,10 @@ Then(/^I Check third "(.*)" content$/, async (zadanie) => {
     await Actions().clickOn(selectors.dropDown()[1])
     await Actions().clickOn(selectors.dropDown()[2])
     require("chai").expect(await Assertion().disabled(selectors.inputForm())).to.eq(true)
+    await Actions().fillField(selectors.textArea(), "My Notes")
+    await Actions().waitUntilClickable(selectors.submit())
+    await Actions().clickOn(selectors.submit())
+    await Assertion().displayed(selectors.noteComplete())
 });
 
 Then(/^I Check fifth "(.*)" content$/, async (zadanie) => {

@@ -6,7 +6,9 @@ const Assertion = () => {
 
         disabled: async (selector) => {
             return $(selector).isEnabled()
-        }
+        },
+
+
     }
 }
 

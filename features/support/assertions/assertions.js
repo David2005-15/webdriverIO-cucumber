@@ -1,7 +1,7 @@
 const Assertion = () => {
     return {
-        displayed: (selector) => {
-            $(selector).isDisplayed()
+        displayed: async (selector) => {
+            await $(selector).isDisplayed()
         }
     }
 }

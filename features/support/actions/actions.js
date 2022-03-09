@@ -1,11 +1,11 @@
 const Actions = () => {
     return {
-        goToUrl: (url) => {
-            browser.url(url)
+        goToUrl: async (url) => {
+            await browser.url(url)
         },
 
-        clickOn: (selector) => {
-            $(selector).click()
+        clickOn: async (selector) => {
+            await $(selector).click()
         }
     }
 }

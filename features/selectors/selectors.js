@@ -26,6 +26,10 @@ class Selectors {
     form(){
         return [`#save-btn`, `[name="name"]`, `#email`, `[name="phone"]`]
     }
+
+    fileUpload(){
+        return `[type="file"]`
+    }
 }
 
 module.exports = { Selectors }

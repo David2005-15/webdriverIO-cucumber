@@ -18,6 +18,10 @@ const Actions = () => {
 
         windowHandle: async ()=> {
             await browser.getWindowHandle()
+        },
+
+        executeKeyboard: async (key)=> {
+            await browser.keys(key)
         }
     }
 }

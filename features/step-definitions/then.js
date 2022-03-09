@@ -2,6 +2,7 @@ const { Then } = require("@wdio/cucumber-framework")
 const { Assertion } = require("../support/assertions/assertions")
 const { Actions } = require("../support/actions/actions")
 const { Selectors } = require("../selectors/selectors")
+const path = require('path');
 
 const selectors = new Selectors()
 
@@ -19,6 +20,12 @@ Then(/^I Check third "(.*)" content$/, async (zadanie) => {
     await Actions().clickOn(selectors.dropDown()[1])
     await Actions().clickOn(selectors.dropDown()[2])
     require("chai").expect(await Assertion().disabled(selectors.inputForm())).to.eq(true)
+});
+
+Then(/^I Check fifth "(.*)" content$/, async (zadanie) => {
+    const filePath = await path.join('C:/Users/Admin/WebstormProjects/WebDriverIO task/features/test-data/test.txt');
+    await Actions().fillField(selectors.fileUpload(), filePath)
+    await Actions().executeKeyboard("Enter")
 });
 
 

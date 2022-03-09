@@ -16,3 +16,7 @@ When(/^I Click on third "(.*)"$/, async (zadanie)=> {
     await Actions().clickOn(selectors.zadanie(3))
 });
 
+When(/^I Click on fifth "(.*)"$/, async (zadanie)=> {
+    await Actions().clickOn(selectors.zadanie(5))
+});
+

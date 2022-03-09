@@ -33,4 +33,19 @@ exports.config = {
         timeout: 60000,
         ignoreUndefinedDefinitions: false
     },
+
+    suites: {
+        zadanie1: [
+            './features/feature/zadanie1.feature'
+        ],
+        zadanie2: [
+            './features/feature/zadanie2.feature'
+        ],
+        zadanie3: [
+            './features/feature/zadanie3.feature'
+        ],
+        zadanie5: [
+            './features/feature/zadanie5.feature'
+        ]
+    }
 }

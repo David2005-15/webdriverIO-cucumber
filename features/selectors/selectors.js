@@ -42,6 +42,22 @@ class Selectors {
     noteComplete(){
         return `div > div.notifyjs-container > div > span`
     }
+
+    loginField(){
+        return `#LoginForm__username`
+    }
+
+    passwordField(){
+        return `#LoginForm__password`
+    }
+
+    submitLoginForm(){
+        return `#LoginForm_save`
+    }
+
+    error(){
+        return `.alert-danger`
+    }
 }
 
 module.exports = { Selectors }

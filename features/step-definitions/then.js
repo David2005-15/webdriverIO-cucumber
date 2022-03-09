@@ -32,4 +32,15 @@ Then(/^I Check fifth "(.*)" content$/, async (zadanie) => {
     await Actions().executeKeyboard("Enter")
 });
 
+Then(/^I Check that sixth zadanie is open$/, async () => {
+    await Assertion().toBeEq(await Assertion().displayed(selectors.loginField()), true)
+    await Assertion().toBeEq(await Assertion().displayed(selectors.passwordField()), true)
+    await Assertion().toBeEq(await Assertion().displayed(selectors.submitLoginForm()), true)
+});
+
+Then(/^I Check form status$/, async () => {
+    await Actions().waitUntilDisplay(selectors.error())
+    await Assertion().toBeEq(await Assertion().displayed(selectors.error()), true)
+});
+
 

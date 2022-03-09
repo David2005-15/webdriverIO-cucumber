@@ -1,6 +1,7 @@
 const { When } = require("@wdio/cucumber-framework")
 const { Actions } = require("../support/actions/actions")
 const { Selectors } = require("../selectors/selectors")
+const { Outline } = require("../specify/outline")
 
 const selectors = new Selectors()
 
@@ -31,8 +32,19 @@ When(/^I Send the Form$/, async () => {
     await Actions().clickOn(selectors.submit())
 });
 
-
-When(/^I Click on fifth "(.*)"$/, async (zadanie)=> {
+When(/^I Click on fifth "(.*)"$/, async (zadanie) => {
     await Actions().clickOn(selectors.zadanie(5))
 });
 
+When(/^I Click on sixth "(.*)"$/, async (zadanie) => {
+    await Actions().clickOn(selectors.zadanie(6))
+});
+
+When(/^I Fill login with "(.*)"$/, async (login) => {
+    await Outline().switchCaseForLogin(login)
+});
+
+When(/^I Fill password with "(.*)"$/, async (password) => {
+    await Outline().switchCaseForPassword(password)
+    await Actions().clickOn(selectors.submitLoginForm())
+});

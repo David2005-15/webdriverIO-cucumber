@@ -25,7 +25,7 @@ exports.config = {
         backtrace: false,
         requireModule: [],
         dryRun: false,
-        failFast: false,
+        failFast: true,
         snippets: true,
         source: true,
         strict: false,
@@ -46,6 +46,9 @@ exports.config = {
         ],
         zadanie5: [
             './features/feature/zadanie5.feature'
+        ],
+        zadanie6: [
+            './features/feature/zadanie6.feature'
         ]
     }
 }

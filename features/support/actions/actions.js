@@ -26,6 +26,10 @@ const Actions = () => {
 
         waitUntilClickable: async (selector) => {
             await $(selector).waitForClickable({timeout: 5000})
+        },
+
+        waitUntilDisplay: async (selector) => {
+            await $(selector).waitForDisplayed({timeout: 5000})
         }
     }
 }

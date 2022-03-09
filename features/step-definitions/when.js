@@ -14,4 +14,5 @@ When(/^I Click on second "(.*)"$/, async (zadanie)=> {
 
 When(/^I Click on third "(.*)"$/, async (zadanie)=> {
     await Actions().clickOn(selectors.zadanie(3))
-})
+});
+

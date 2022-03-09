@@ -16,7 +16,15 @@ class Selectors {
     }
 
     dropDown(){
-        return [".dropdown-toggle.menu-border", "#menu1 > li:nth-child(1) > a", "#start-edit"]
+        return [`.dropdown-toggle.menu-border`, `#menu1 > li:nth-child(1) > a`, `#start-edit`]
+    }
+
+    applyButton(){
+        return `[class*="js-open"]`
+    }
+
+    form(){
+        return [`#save-btn`, `[name="name"]`, `#email`, `[name="phone"]`]
     }
 }
 

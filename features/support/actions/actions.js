@@ -6,6 +6,18 @@ const Actions = () => {
 
         clickOn: async (selector) => {
             await $(selector).click()
+        },
+
+        fillField: async (selector, value) => {
+            await $(selector).setValue(value)
+        },
+
+        switchChildWindows: async (value)=> {
+            await browser.switchToWindow(value)
+        },
+
+        windowHandle: async ()=> {
+            await browser.getWindowHandle()
         }
     }
 }

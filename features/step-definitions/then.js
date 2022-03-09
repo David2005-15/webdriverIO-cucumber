@@ -7,24 +7,24 @@ const path = require('path');
 const selectors = new Selectors()
 
 Then(/^I Check first "(.*)" content$/, async (zadanie) => {
-    require("chai").expect(await Assertion().displayed(selectors.zadanie1Form())).to.eq(true)
+    await Assertion().toBeEq(await Assertion().disabled(selectors.zadanie1Form()), true)
 });
 
 Then(/^I Check second "(.*)" content$/, async (zadanie) => {
-    require("chai").expect(await Assertion().displayed(selectors.zadanie2Form())).to.eq(true)
+    await Assertion().toBeEq(await Assertion().disabled(selectors.zadanie2Form()), true)
 });
 
-Then(/^I Check third "(.*)" content$/, async (zadanie) => {
-    require("chai").expect(await Assertion().disabled(selectors.inputForm())).to.eq(false)
-    await Actions().clickOn(selectors.dropDown()[0])
-    await Actions().clickOn(selectors.dropDown()[1])
-    await Actions().clickOn(selectors.dropDown()[2])
-    require("chai").expect(await Assertion().disabled(selectors.inputForm())).to.eq(true)
-    await Actions().fillField(selectors.textArea(), "My Notes")
-    await Actions().waitUntilClickable(selectors.submit())
-    await Actions().clickOn(selectors.submit())
-    await Assertion().displayed(selectors.noteComplete())
+Then(/^I Check third "(.*)" content is disabled$/, async (zadanie) => {
+    await Assertion().toBeEq(await Assertion().disabled(selectors.inputForm()), false)
 });
+
+Then(/^I Check third "(.*)" content is enabled$/, async (zadanie) => {
+    await Assertion().toBeEq(await Assertion().disabled(selectors.inputForm()), true)
+});
+
+Then(/^I Check that Form are sent$/, async ()=> {
+    await Assertion().displayed(selectors.noteComplete())
+})
 
 Then(/^I Check fifth "(.*)" content$/, async (zadanie) => {
     const filePath = await path.join('C:/Users/Admin/WebstormProjects/WebDriverIO task/features/test-data/test.txt');

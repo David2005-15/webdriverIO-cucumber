@@ -1,19 +1,11 @@
 const Assertion = () => {
     return {
         displayed: async (selector) => {
-            await $(selector).isDisplayed()
+            return await $(selector).isDisplayed()
         },
 
         disabled: async (selector) => {
-            try{
-               await $(selector).isEnabled
-            } catch (disabled){
-                if (!disabled){
-                    return disabled
-                }else {
-                    return true
-                }
-            }
+            return $(selector).isEnabled()
         }
     }
 }

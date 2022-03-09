@@ -7,8 +7,16 @@ class Selectors {
         return `[class*='col'] > form`
     }
 
+    zadanie2Form(){
+        return `.task > h1`
+    }
+
     inputForm(){
         return `#in-name`
+    }
+
+    dropDown(){
+        return [".dropdown-toggle.menu-border", "#menu1 > li:nth-child(1) > a", "#start-edit"]
     }
 }
 

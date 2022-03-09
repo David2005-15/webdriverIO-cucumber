@@ -6,6 +6,10 @@ class Selectors {
     zadanie1Form(){
         return `[class*='col'] > form`
     }
+
+    inputForm(){
+        return `#in-name`
+    }
 }
 
 module.exports = { Selectors }

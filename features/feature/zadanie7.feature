@@ -4,6 +4,6 @@ Feature:
 
   Scenario:
     When I Click on Seventh zadanie
-    Then I Check if Seventh zadanie is open
+    Then I Check if zadanie is open
     When I Drag and Drop First Item
     Then I Check if Price Increasing

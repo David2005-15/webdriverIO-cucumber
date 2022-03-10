@@ -56,3 +56,20 @@ When(/^I Click on Seventh zadanie$/, async () => {
 When(/^I Drag and Drop First Item$/, async () => {
     await Actions().dragAndDrop(selectors.firstItem(), selectors.target())
 });
+
+When(/^I Open Eighth zadanie$/, async ()=> {
+    await Actions().clickOn(selectors.zadanie(8))
+});
+
+When(/^I Fill Cart Name with "(.*)"$/, async (name) => {
+    await Outline().switchCaseForCardName(name)
+});
+
+When(/^I Fill Cart Numbers with "(.*)"$/, async (numbers) => {
+    await Outline().switchCaseForCardNumbers(numbers)
+});
+
+When(/^I Fill Cart CVV code with "(.*)"$/, async (cvv) => {
+    await Outline().switchCaseForCardCvv(cvv)
+    await Actions().clickOn(selectors.submitForCard())
+});

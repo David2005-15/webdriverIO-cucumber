@@ -2,7 +2,9 @@ const { Then } = require("@wdio/cucumber-framework")
 const { Assertion } = require("../support/assertions/assertions")
 const { Actions } = require("../support/actions/actions")
 const { Selectors } = require("../selectors/selectors")
-const path = require('path');
+const {Outline} = require("../specify/outline")
+const path = require('path')
+
 
 const selectors = new Selectors()
 
@@ -43,12 +45,17 @@ Then(/^I Check form status$/, async () => {
     await Assertion().toBeEq(await Assertion().displayed(selectors.error()), true)
 });
 
-Then(/^I Check if Seventh zadanie is open$/, async () => {
+Then(/^I Check if zadanie is open$/, async () => {
     await Assertion().toBeEq(await Assertion().displayed(selectors.zadanieTitle()), true)
 });
 
 Then(/^I Check if Price Increasing$/, async ()=> {
     await Assertion().toBeEq(await $(selectors.summary).text(), "31.08 zł")
 });
+
+Then(/^"(.*)" window is displayed$/, async (error) => {
+    await Outline().switchCaseForErrors(error)
+});
+
 
 

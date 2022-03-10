@@ -1,5 +1,6 @@
-const {Selectors} = require("../selectors/selectors");
-const { Actions } = require("../support/actions/actions")
+const { Selectors } = require("../selectors/selectors");
+const { Actions } = require("../support/actions/actions");
+const { Assertion } = require("../support/assertions/assertions");
 
 const selectors = new Selectors();
 
@@ -34,6 +35,54 @@ const Outline = () => {
                     break
                 default:
                 ////pass
+            }
+        },
+
+        switchCaseForCardName: async (option) => {
+            switch (option){
+                case "david":
+                    await Actions().fillField(selectors.names(), "david")
+                    break
+                case "gkhsad":
+                    await Actions().fillField(selectors.names(), "gkhsad")
+                    break
+                default:
+                    ////pass
+            }
+        },
+
+        switchCaseForCardNumbers: async (option) => {
+            switch (option){
+                case "789978977897554":
+                    await Actions().fillField(selectors.numbers(), "789978977897554")
+                    break
+                case "789978977897":
+                    await Actions().fillField(selectors.numbers(), "789978977897")
+                    break
+                default:
+                ////pass
+            }
+        },
+
+        switchCaseForCardCvv: async (option) => {
+            switch (option){
+                case "457":
+                    await Actions().fillField(selectors.cvv(), "457")
+                    break
+                default:
+                ////pass
+            }
+        },
+
+        switchCaseForErrors: async (option) => {
+            switch (option){
+                case "not found":
+                    await Actions().waitUntilDisplay(selectors.errorForCard1())
+                    await Assertion().toBeEq(await Assertion().displayed(selectors.errorForCard1()), true)
+                    break
+                case "request format":
+                    await Actions().waitUntilDisplay(selectors.errorForCard2())
+                    await Assertion().toBeEq(await Assertion().displayed(selectors.errorForCard2()), true)
             }
         }
     }

@@ -66,6 +66,30 @@ class Selectors {
     summary(){
         return `.summary-price`
     }
+
+    names(){
+        return `#task8_form_name`
+    }
+
+    numbers(){
+        return `#task8_form_cardNumber`
+    }
+
+    cvv(){
+        return `#task8_form_cardCvv`
+    }
+
+    submitForCard(){
+        return `[name="task8_form[save]"]`
+    }
+
+    errorForCard1(){
+         return `.alert-danger`
+    }
+
+    errorForCard2(){
+        return `.col-md-8.error-container`
+    }
 }
 
 module.exports = { Selectors }

@@ -4,7 +4,7 @@ Feature:
 
   Scenario Outline:
     When I Click on sixth "zadanie"
-    Then I Check that sixth zadanie is open
+    Then I Check if zadanie is open
     When I Fill login with "<login-username>"
     When I Fill password with "<login-password>"
     Then I Check form status

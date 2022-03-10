@@ -1,19 +1,20 @@
 const { When } = require("@wdio/cucumber-framework")
 const { Actions } = require("../support/actions/actions")
+const { Assertion } = require("../support/assertions/assertions")
 const { Selectors } = require("../selectors/selectors")
 const { Outline } = require("../specify/outline")
 
 const selectors = new Selectors()
 
-When(/^I Click on first "(.*)"$/, async (zadanie)=> {
+When(/^I Click on first (.*)$/, async ()=> {
     await Actions().clickOn(selectors.zadanie(1))
 });
 
-When(/^I Click on second "(.*)"$/, async (zadanie)=> {
+When(/^I Click on second (.*)$/, async ()=> {
     await Actions().clickOn(selectors.zadanie(2))
 });
 
-When(/^I Click on third "(.*)"$/, async (zadanie)=> {
+When(/^I Click on third (.*)$/, async ()=> {
     await Actions().clickOn(selectors.zadanie(3))
 });
 
@@ -32,11 +33,11 @@ When(/^I Send the Form$/, async () => {
     await Actions().clickOn(selectors.submit())
 });
 
-When(/^I Click on fifth "(.*)"$/, async (zadanie) => {
+When(/^I Click on fifth (.*)$/, async () => {
     await Actions().clickOn(selectors.zadanie(5))
 });
 
-When(/^I Click on sixth "(.*)"$/, async (zadanie) => {
+When(/^I Click on sixth (.*)$/, async () => {
     await Actions().clickOn(selectors.zadanie(6))
 });
 
@@ -73,3 +74,23 @@ When(/^I Fill Cart CVV code with "(.*)"$/, async (cvv) => {
     await Outline().switchCaseForCardCvv(cvv)
     await Actions().clickOn(selectors.submitForCard())
 });
+
+When(/^I Open Ninth zadanie$/, async () => {
+    await Actions().clickOn(selectors.zadanie(9))
+});
+
+When(/^I Expend nodes$/, async () => {
+    let checkpoint = await Assertion().displayed(selectors.roots()[1])
+    if (checkpoint === false){
+        await Actions().waitUntilDisplay(selectors.jsTree()[0])
+        await Actions().clickOn(selectors.jsTree()[0])
+    }
+
+    await Actions().waitUntilDisplay(selectors.jsTree()[1])
+    await Actions().clickOn(selectors.jsTree()[1])
+});
+
+When(/^I Click on "(.*)"$/, async (root) => {
+    await Outline().switchCaseForRoot(root)
+});
+

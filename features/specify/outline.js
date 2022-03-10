@@ -84,6 +84,44 @@ const Outline = () => {
                     await Actions().waitUntilDisplay(selectors.errorForCard2())
                     await Assertion().toBeEq(await Assertion().displayed(selectors.errorForCard2()), true)
             }
+        },
+
+        switchCaseForRoot: async (option) => {
+            switch (option){
+                case "main root":
+                    await Actions().clickOn(selectors.roots()[0])
+                    break
+                case "child root1":
+                    await Actions().clickOn(selectors.roots()[1])
+                    break
+                case "child root2":
+                    await Actions().clickOn(selectors.roots()[2])
+                    break
+                case "child root1-1":
+                    await Actions().clickOn(selectors.roots()[3])
+                    break
+                default:
+                    ///pass
+            }
+        },
+
+        switchCaseForContent: async (option) => {
+            switch (option){
+                case "main content":
+                    await Assertion().toBeEq(await Assertion().displayed(selectors.content()), true)
+                    break
+                case "child root1 content":
+                    await Assertion().toBeEq(await Assertion().displayed(selectors.content()), true)
+                    break
+                case "child root2 content":
+                    await Assertion().toBeEq(await Assertion().displayed(selectors.content()), true)
+                    break
+                case "child root1-1 content":
+                    await Assertion().toBeEq(await Assertion().displayed(selectors.content()), true)
+                    break
+                default:
+                    ////pass
+            }
         }
     }
 }

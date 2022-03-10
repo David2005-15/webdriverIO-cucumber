@@ -90,6 +90,18 @@ class Selectors {
     errorForCard2(){
         return `.col-md-8.error-container`
     }
+
+    jsTree(){
+        return [`#j1_1 > i`, `#j1_2 > i`]
+    }
+
+    roots(){
+        return [`#j1_1_anchor`, `#j1_2_anchor`, `#j1_3_anchor`, `#j1_4_anchor`]
+    }
+
+    content(){
+        return `.col-md-9.content-container`
+    }
 }
 
 module.exports = { Selectors }

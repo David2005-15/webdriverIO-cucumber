@@ -3,7 +3,7 @@ Feature:
     Given I Open Web Site
 
   Scenario Outline:
-    When I Click on sixth "zadanie"
+    When I Click on sixth zadanie
     Then I Check if zadanie is open
     When I Fill login with "<login-username>"
     When I Fill password with "<login-password>"

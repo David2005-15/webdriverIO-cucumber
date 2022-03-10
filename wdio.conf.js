@@ -55,6 +55,9 @@ exports.config = {
         ],
         zadanie8: [
             './features/feature/zadanie8.feature'
+        ],
+        zadanie9: [
+            './features/feature/zadanie9.feature'
         ]
     }
 }

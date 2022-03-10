@@ -49,6 +49,9 @@ exports.config = {
         ],
         zadanie6: [
             './features/feature/zadanie6.feature'
+        ],
+        zadanie7: [
+            './features/feature/zadanie7.feature'
         ]
     }
 }

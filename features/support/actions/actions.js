@@ -30,6 +30,10 @@ const Actions = () => {
 
         waitUntilDisplay: async (selector) => {
             await $(selector).waitForDisplayed({timeout: 5000})
+        },
+
+        dragAndDrop: async (selector, target) => {
+            await $(selector).dragAndDrop(await $(target))
         }
     }
 }

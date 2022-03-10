@@ -19,14 +19,6 @@ class Selectors {
         return [`.dropdown-toggle.menu-border`, `#menu1 > li:nth-child(1) > a`, `#start-edit`]
     }
 
-    applyButton(){
-        return `[class*="js-open"]`
-    }
-
-    form(){
-        return [`#save-btn`, `[name="name"]`, `#email`, `[name="phone"]`]
-    }
-
     fileUpload(){
         return `[type="file"]`
     }
@@ -57,6 +49,22 @@ class Selectors {
 
     error(){
         return `.alert-danger`
+    }
+
+    zadanieTitle(){
+        return `li:nth-child(2)`
+    }
+
+    firstItem(){
+        return `div:nth-child(1) > div:nth-child(1) > div > div.draggable.ui-draggable.ui-draggable-handle`
+    }
+
+    target(){
+        return `div.panel-body`
+    }
+
+    summary(){
+        return `.summary-price`
     }
 }
 

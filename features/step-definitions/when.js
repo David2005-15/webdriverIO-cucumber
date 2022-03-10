@@ -48,3 +48,11 @@ When(/^I Fill password with "(.*)"$/, async (password) => {
     await Outline().switchCaseForPassword(password)
     await Actions().clickOn(selectors.submitLoginForm())
 });
+
+When(/^I Click on Seventh zadanie$/, async () => {
+    await Actions().clickOn(selectors.zadanie(7))
+});
+
+When(/^I Drag and Drop First Item$/, async () => {
+    await Actions().dragAndDrop(selectors.firstItem(), selectors.target())
+});

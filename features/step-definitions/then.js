@@ -22,7 +22,7 @@ Then(/^I Check third "(.*)" content is enabled$/, async (zadanie) => {
     await Assertion().toBeEq(await Assertion().disabled(selectors.inputForm()), true)
 });
 
-Then(/^I Check that Form are sent$/, async ()=> {
+Then(/^I Check that Form are sent$/, async () => {
     await Assertion().displayed(selectors.noteComplete())
 })
 
@@ -41,6 +41,14 @@ Then(/^I Check that sixth zadanie is open$/, async () => {
 Then(/^I Check form status$/, async () => {
     await Actions().waitUntilDisplay(selectors.error())
     await Assertion().toBeEq(await Assertion().displayed(selectors.error()), true)
+});
+
+Then(/^I Check if Seventh zadanie is open$/, async () => {
+    await Assertion().toBeEq(await Assertion().displayed(selectors.zadanieTitle()), true)
+});
+
+Then(/^I Check if Price Increasing$/, async ()=> {
+    await Assertion().toBeEq(await $(selectors.summary).text(), "31.08 zł")
 });
 
 
